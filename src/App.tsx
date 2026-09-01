@@ -84,11 +84,11 @@ function App() {
   }, [pokemon.length, total]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-red-950 to-slate-900 text-white">
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute -left-20 top-20 h-72 w-72 animate-float rounded-full bg-purple-500/20 blur-3xl" />
-        <div className="absolute right-10 top-40 h-96 w-96 animate-float rounded-full bg-cyan-500/10 blur-3xl [animation-delay:2s]" />
-        <div className="absolute bottom-20 left-1/3 h-80 w-80 animate-float rounded-full bg-pink-500/10 blur-3xl [animation-delay:4s]" />
+        <div className="absolute -left-20 top-20 h-72 w-72 animate-float rounded-full bg-red-500/20 blur-3xl" />
+        <div className="absolute right-10 top-40 h-96 w-96 animate-float rounded-full bg-rose-500/10 blur-3xl [animation-delay:2s]" />
+        <div className="absolute bottom-20 left-1/3 h-80 w-80 animate-float rounded-full bg-orange-500/10 blur-3xl [animation-delay:4s]" />
       </div>
 
       <header className="relative z-10 border-b border-white/10 bg-white/5 backdrop-blur-md">
@@ -100,7 +100,7 @@ function App() {
                 alt="Pokédex"
                 className="h-10 w-10 animate-bounce-slow object-contain drop-shadow-lg sm:h-12 sm:w-12"
               />
-              <h1 className="bg-gradient-to-r from-yellow-300 via-pink-400 to-cyan-400 bg-clip-text text-4xl font-black uppercase italic tracking-tight text-transparent sm:text-6xl">
+              <h1 className="bg-gradient-to-r from-yellow-300 via-red-400 to-orange-400 bg-clip-text text-4xl font-black uppercase italic tracking-tight text-transparent sm:text-6xl">
                 Kmus Pokedex
               </h1>
             </div>
@@ -120,7 +120,7 @@ function App() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Buscar Pokémon por nombre..."
-                className="w-full rounded-full border-2 border-white/10 bg-white/10 px-6 py-3 pl-12 text-white placeholder-slate-400 outline-none backdrop-blur-sm transition-all focus:border-cyan-400 focus:bg-white/15 focus:ring-4 focus:ring-cyan-400/20"
+                className="w-full rounded-full border-2 border-white/10 bg-white/10 px-6 py-3 pl-12 text-white placeholder-slate-400 outline-none backdrop-blur-sm transition-all focus:border-red-400 focus:bg-white/15 focus:ring-4 focus:ring-red-400/20"
               />
               <svg
                 className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
@@ -139,7 +139,7 @@ function App() {
             <button
               type="submit"
               disabled={searching}
-              className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 font-bold text-white shadow-lg shadow-cyan-500/25 transition-all hover:scale-105 hover:shadow-cyan-500/40 disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-full bg-gradient-to-r from-red-500 to-rose-600 px-8 py-3 font-bold text-white shadow-lg shadow-red-500/25 transition-all hover:scale-105 hover:shadow-red-500/40 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {searching ? "Buscando..." : "Buscar"}
             </button>
@@ -163,13 +163,13 @@ function App() {
       <main className="relative z-10 mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-6 flex items-center justify-between">
           <p className="text-sm font-medium text-slate-400">
-            Mostrando <span className="text-cyan-300">{stats.displayed}</span>{" "}
-            de <span className="text-pink-300">{stats.total}</span> Pokémon
+            Mostrando <span className="text-red-300">{stats.displayed}</span>{" "}
+            de <span className="text-rose-300">{stats.total}</span> Pokémon
           </p>
           {!isSearching && (
             <div className="hidden h-2 w-32 overflow-hidden rounded-full bg-white/10 sm:block">
               <div
-                className="h-full rounded-full bg-gradient-to-r from-cyan-400 to-pink-400 transition-all duration-500"
+                className="h-full rounded-full bg-gradient-to-r from-red-400 to-orange-400 transition-all duration-500"
                 style={{
                   width: `${Math.min((stats.displayed / stats.total) * 100, 100)}%`,
                 }}
@@ -180,7 +180,7 @@ function App() {
 
         {loading ? (
           <div className="flex flex-col items-center justify-center gap-4 py-24">
-            <div className="h-16 w-16 animate-spin rounded-full border-4 border-white/10 border-t-cyan-400" />
+            <div className="h-16 w-16 animate-spin rounded-full border-4 border-white/10 border-t-red-400" />
             <p className="text-lg font-medium text-slate-300">
               Cargando Pokémon...
             </p>
@@ -217,7 +217,7 @@ function App() {
                 <button
                   onClick={handleLoadMore}
                   disabled={loadingMore}
-                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 px-10 py-4 font-black text-white shadow-xl shadow-purple-500/25 transition-all hover:scale-105 hover:shadow-purple-500/40 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="group relative overflow-hidden rounded-full bg-gradient-to-r from-red-500 via-rose-500 to-orange-500 px-10 py-4 font-black text-white shadow-xl shadow-red-500/25 transition-all hover:scale-105 hover:shadow-red-500/40 disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     {loadingMore ? (
@@ -258,7 +258,7 @@ function App() {
             href="https://github.com/KmusDC"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cyan-400 hover:underline"
+            className="text-red-400 hover:underline"
           >
             Eduardo Kmus
           </a>
